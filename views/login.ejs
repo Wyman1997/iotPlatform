@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>登录页面</title>
+    <%- include head %>
+
+</head>
+<body class="login-regist">
+    <div class="form-box"></div>
+        
+        <form action="/users/login" method="post" class="login-form">
+            <h1>登录</h1>
+            <label for="username" class="label">用户名</label>
+            <input type="text" name="username" id="username" placeholder="请输入用户名" value=""/>
+
+            <label for="password" class="label">密码</label>
+            <input type="password" name="password" id="password" placeholder="请输入密码" value=""/>
+            
+            <input type="submit" class="submit" value="登录" />
+            <div class="content">无账号，<a href="./regist">立即注册</a></div>
+        </form>  
+    </div>
+
+    <script type="text/javascript">
+        
+    </script>
+
+</body>
+</html>

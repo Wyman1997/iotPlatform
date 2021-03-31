@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>首页</title>
+    <%- include head %>
+  </head>
+  <body class="bgcolor">
+    <%- include('bar',{username:username}) %>
+    <div class="list">
+      <div class="row">
+        <span>序号</span>
+        <span>CO2</span>
+        <span>CH2O</span>
+        <span>TVOC</span>
+        <span>PM2.5</span>
+        <span>PM10</a></span>
+        <span>温度</span>
+        <span>湿度</span>
+        <span>IP地址</span>
+        <span>接收时间</span>
+        <span>拥有者</span>
+      </div>
+
+      <% var i = 1%>
+      <% data.list.map(function(item, index){ %>
+        <% if((username == item.owner) || (username == "admin")){%>
+        <div class="row">
+          <span><%= i %></span>
+          <span><%= item.CO2 %></span>
+          <span><%= item.CH2O %></span>
+          <span><%= item.TVOC %></span>
+          <span><%= item.PM25 %></span>
+          <span><%= item.PM10%></a></span>
+          <span><%= item.temperature%></span>
+          <span><%= item.humidty%></span>
+          <span><%= item.tcpClientIp%></span>
+          <span><%= item.time%></span>
+          <span><%= item.owner%></span>
+          <span>
+            <a href="/delete?_id=<%=item._id%>&page=<%=data.curPage%>">删除</a>
+            <a href="/edit?_id=<%=item._id%>&page=<%=data.curPage%>">编辑</a>
+          </span>
+        </div>
+        <% i++ %>
+        <%}%>
+      <% }) %>
+   
+
+      <div class="pages">
+        <span>页码</span>
+        <% for(let i=1; i<=data.total; i++) {%>
+          <a href="/?page=<%= i %>"><%= i %></a>
+        <% } %>
+      </div>
+
+    </div>
+    <script>
+      // function myRefresh(){
+      //   window.location.reload();
+      // }
+      // setInterval('myRefresh()', 1000);
+    </script>
+  </body>
+</html>
