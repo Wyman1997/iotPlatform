@@ -2,16 +2,19 @@ const { model } = require('mongoose');
 const mongoose = require('./db');
 
 var controllerDataScheam = mongoose.Schema({
-    plasma_status:{
+    plasmaStatus:{
         type:Boolean
     },
-    uvl_status:{
+    uvlStatus:{
         type:Boolean
     },
-    tcp_client_ip:{
+    speed:{
 
     },
-    send_time:{
+    tcpClientIp:{
+        
+    },
+    receivedTime:{
 
     },
 })

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>指令下发</title>
+    <%- include head %>
+<body class="bgcolor">
+    <%- include('bar',{username:username}) %>
+    <div class="commandlist">
+        <form action="/data/send" method="POST" onsubmit="return validate()">
+            <label for="plasmaStatus" class="label">等离子体(true/false)</label>
+            <input type="text" id="plasmaStatus" name="plasmaStatus"/>
+            <label for="uvlStatus" class="label">紫外线灯(true/false)</label>
+            <input type="text" id="uvlStatus" name="uvlStatus"/>
+            <label for="speed" class="label">风速(1-3)</label>
+            <input type="text" id="speed" name="speed"/>
+            <label for="tcpClientIp" class="label">发送地址:</label>
+            <input type="text" id="tcpClientIp" name="tcpClientIp"/>
+            <input type="submit" class="submit" value="发送">
+        </form>
+    </div>
+    <script type="text/javascript">
+        function validate(){
+            var plasmaStatus = document.getElementById("plasmaStatus").value;
+            var uvlStatus = document.getElementById("uvlStatus").value;
+            var speed = document.getElementById("speed").value;
+            var tcpClientIp = document.getElementById("tcpClientIp").value;
+            //ip地址正则表达式
+            var ipPattern = /((2(5[0-5]|[0-4]\d))|[0-1]?\d{1,2})(\.((2(5[0-5]|[0-4]\d))|[0-1]?\d{1,2})){3}/g;
+            var submitOK = "true";
+
+            if((plasmaStatus != 'true') && (plasmaStatus != 'false')){
+                alert("等离子体开启输入true,关闭输入false");
+                submitOK = "false";
+            }
+
+            if((uvlStatus != "true") && (uvlStatus != "false")){
+                alert("紫外线开启输入true,关闭输入false");
+                submitOK = "false";
+            }
+
+            if(speed != '1' && speed != '2' && speed != '3'){
+                alert("风速请输入1-3");
+                submitOK = 'false';
+            }
+
+            if(ipPattern.test(tcpClientIp) == false){
+                alert('请输入正确的IP地址');
+                submitOK = 'false';
+            }
+
+            if(submitOK == "false"){
+                return false;
+            }
+
+        }
+    </script>
+</body>
+</html>

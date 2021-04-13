@@ -152,13 +152,23 @@ body {
   line-height: 20px;
   margin: auto 0;
 }
+.list>.row>span:nth-child(9){
+  width: 10%;
+}
 .list>.row>span:nth-child(10){
-  width: 15%;
+  width: 12%;
+  height: 20px;
+  line-height: 20px;
 }
 
 .list>.row>span:nth-child(12){
   width: 5%;
   text-align: right;
+
+}
+
+.list>.row>span:nth-child(13){
+  text-align: left;
 }
 
 .list>.row>span>a{
@@ -193,7 +203,7 @@ body {
 	right: 0;
 	bottom: 0;
   width: 500px;
-  height: 700px;
+  height: 200px;
   border-radius: 15px; ;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   text-align: center;
@@ -218,4 +228,47 @@ body {
 
 .dataEditBox>form>input[type = submit]{
   margin-top: 0;
+}
+
+
+.commandlist{
+  margin: auto;
+	position: absolute;
+  top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+  width: 600px;
+  height: 400px;
+  border-radius: 15px; ;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+  color: white;
+  background-color: rgb(74, 94, 119);
+}
+
+.commandlist>form>input[type = text]{
+  text-align: center;
+  display: block;
+  margin: 30px 10px;
+  padding: 17px 50px;
+  border: 2px solid;
+  width: 16rem;
+  height: 8px;
+  border-radius: 4px;
+  background-color: lightgray;
+}
+
+
+.commandlist>form>input[type=text]:hover{
+  background-color: white;
+}
+
+.commandlist>form>label{
+  width: 100px;
+  margin: 0 20px;
+}
+
+.commandlist>form>.submit{
+  margin-top:0;
 }

@@ -23,7 +23,6 @@
 
       <% var i = 1%>
       <% data.list.map(function(item, index){ %>
-        <% if((username == item.owner) || (username == "admin")){%>
         <div class="row">
           <span><%= i %></span>
           <span><%= item.CO2 %></span>
@@ -38,14 +37,11 @@
           <span><%= item.owner%></span>
           <span>
             <a href="/delete?_id=<%=item._id%>&page=<%=data.curPage%>">删除</a>
-            <a href="/edit?_id=<%=item._id%>&page=<%=data.curPage%>">编辑</a>
+            <a href="/edit?tcpClientIp=<%=item.tcpClientIp%>&page=<%=data.curPage%>">更改</a>
           </span>
         </div>
         <% i++ %>
-        <%}%>
       <% }) %>
-   
-
       <div class="pages">
         <span>页码</span>
         <% for(let i=1; i<=data.total; i++) {%>
@@ -54,11 +50,5 @@
       </div>
 
     </div>
-    <script>
-      // function myRefresh(){
-      //   window.location.reload();
-      // }
-      // setInterval('myRefresh()', 1000);
-    </script>
   </body>
 </html>

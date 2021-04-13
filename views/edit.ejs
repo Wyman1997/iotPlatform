@@ -9,29 +9,12 @@
     <%- include('bar',{username:username}) %>
     <div class="dataEditBox">
         <form action="/data/edit" method="POST">
-            <input type="hidden" name="_id" value="<%= item._id %>" />
+            <input type="hidden" name="tcpClientIp" value="<%= item.tcpClientIp%>" />
             <input type="hidden" name="page" value="<%= item.page %>" />
-            <label for="CO2" class="label">CO2</label>
-            <input type="text" id="CO2" name="CO2" value="<%= item.CO2%>" readonly="readonly"/>
-            <label for="CH2O" class="label">CH2O</label>
-            <input type="text" id="CH2O" name="CH2O" value="<%= item.CH2O%>" readonly="readonly"/>
-            <label for="TVOC" class="label">TVOC</label>
-            <input type="text" id="TVOC" name="TVOC" value="<%= item.TVOC%>" readonly="readonly"/>
-            <label for="PM25" class="label">PM25</label>
-            <input type="text" id="PM25" name="PM25" value="<%= item.PM25%>" readonly="readonly"/>
-            <label for="PM10" class="label">PM10</label>
-            <input type="text" id="PM10" name="PM10" value="<%= item.PM10%>" readonly="readonly"/>
-            <label for="temperature" class="label">温度</label>
-            <input type="text" id="temperature" name="temperature" value="<%= item.temperature%>" readonly="readonly"/>
-            <label for="humidty" class="label">湿度</label>
-            <input type="text" id="humidty" name="humidty" value="<%= item.humidty%>"  readonly="readonly"/>
             <label for="tcpClientIp" class="label">IP地址</label>
             <input type="text" id="tcpClientIp" name="tcpClientIp" value="<%= item.tcpClientIp%>"  readonly="readonly"/>
-            <label for="receivedTime" class="label">接收时间</label>
-            <input type="text" id="receivedTime" name="receivedTime" value="<%= item.receivedTime%>" readonly="readonly"/>
             <label for="owner" class="label">所有者</label>
-            <input type="text" id="owner" name="owner" value="<%= item.owner%>"/>
-           
+            <input type="text" id="owner" name="owner" value=""/>
             <input type="submit" class="submit" value="修改">
         </form>
     </div>
